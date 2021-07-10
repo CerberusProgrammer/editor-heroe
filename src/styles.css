@@ -13,8 +13,8 @@ h1 {
     text-align: center;
   }
 
-  mat-toolbar {
-    font-size: 60px;
+  mat-card-footer {
+    margin: 2em;
   }
 
   mat-card {

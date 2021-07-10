@@ -1,14 +1,38 @@
-<mat-toolbar>
-    <mat-card-title>
-        {{title}}
-    </mat-card-title>
+<mat-toolbar color="primary">
+    <button class="menu" mat-icon-button color="white" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>{{title}}</span>
 </mat-toolbar>
 
+<mat-drawer-container class="example-container" autosize>
+    <mat-card>
+        <app-heroes></app-heroes>
+    </mat-card>
 
-<mat-card>
-    <mat-card-title>Bienvenido</mat-card-title>
-    <mat-card-subtitle>Hola</mat-card-subtitle>
-    <app-heroes></app-heroes>
-</mat-card>
+    <mat-card>
+        <mat-card-title>
+            Autor
+        </mat-card-title>
+        <mat-card-footer>
+            Desarrollado por Cerberus
+        </mat-card-footer>
+    </mat-card>
 
-
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <mat-selection-list #shoes [multiple]="false">
+            <mat-list-option>
+                Inicio
+            </mat-list-option>
+            <mat-list-option>
+                Heroes
+            </mat-list-option>
+            <mat-list-option>
+                Informacion
+            </mat-list-option>
+            <mat-list-option>
+                Otros
+            </mat-list-option>
+          </mat-selection-list>
+    </mat-drawer>
+</mat-drawer-container>

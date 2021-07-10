@@ -1,13 +1,18 @@
-<h2>Best Hero</h2>
-<h3>id: {{hero.id}}, name: {{hero.name}} </h3>
-
 <h2>My Heroes</h2>
-<ul class="heroes">
-  <li *ngFor="let hero of heroes" 
-  [class.selected]="hero === selectedHero"
-  (click)="onSelect(hero)">
-    <span class="badge">id: {{hero.id}}</span> name: {{hero.name}}
-  </li>
-</ul>
+<mat-card>
+  <mat-grid-list cols="2" rowHeight="500">
+    <mat-grid-tile>
+      <mat-selection-list #shoes [multiple]="false">
+        <mat-list-option *ngFor="let hero of heroes" [value]="hero"
+        [class.selected]="hero === selectedHero"
+        (click)="onSelect(hero)">
+          {{hero.name}}
+        </mat-list-option>
+      </mat-selection-list>
+    </mat-grid-tile>
 
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+    <mat-grid-tile>
+      <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-card>

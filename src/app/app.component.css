@@ -1,0 +1,16 @@
+mat-card {
+    
+}
+
+mat-toolbar {
+    background-color: white;
+    font-size: 30px;
+}
+
+mat-card-footer {
+    margin: 1em;
+  }
+
+.menu {
+    margin: 1em;
+}
