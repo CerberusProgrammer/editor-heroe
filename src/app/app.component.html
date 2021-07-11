@@ -7,7 +7,8 @@
 
 <mat-drawer-container class="example-container" autosize>
     <mat-card>
-        <app-heroes></app-heroes>
+        <router-outlet></router-outlet>
+        <app-messages></app-messages>
     </mat-card>
 
     <mat-card>
@@ -21,17 +22,14 @@
 
     <mat-drawer #drawer class="example-sidenav" mode="side">
         <mat-selection-list #shoes [multiple]="false">
-            <mat-list-option>
+            <mat-list-option routerLink="/">
                 Inicio
             </mat-list-option>
-            <mat-list-option>
+            <mat-list-option routerLink="/heroes">
                 Heroes
             </mat-list-option>
             <mat-list-option>
                 Informacion
-            </mat-list-option>
-            <mat-list-option>
-                Otros
             </mat-list-option>
           </mat-selection-list>
     </mat-drawer>
