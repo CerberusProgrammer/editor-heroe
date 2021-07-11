@@ -1,18 +1,16 @@
-<h2>My Heroes</h2>
 <mat-card>
-  <mat-grid-list cols="2" rowHeight="500">
-    <mat-grid-tile>
-      <mat-selection-list #shoes [multiple]="false">
-        <mat-list-option *ngFor="let hero of heroes" [value]="hero"
-        [class.selected]="hero === selectedHero"
-        (click)="onSelect(hero)">
-          {{hero.name}}
-        </mat-list-option>
-      </mat-selection-list>
-    </mat-grid-tile>
+    <h2>My Heroes</h2>
+    <mat-grid-list cols="2" rowHeight="500">
+        <mat-grid-tile>
+            <mat-selection-list #shoes [multiple]="false">
+                <mat-list-option *ngFor="let hero of heroes" [value]="hero" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
+                    {{hero.name}}
+                </mat-list-option>
+            </mat-selection-list>
+        </mat-grid-tile>
 
-    <mat-grid-tile>
-      <app-hero-detail [hero]="selectedHero"></app-hero-detail>
-    </mat-grid-tile>
-  </mat-grid-list>
+        <mat-grid-tile>
+            <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+        </mat-grid-tile>
+    </mat-grid-list>
 </mat-card>

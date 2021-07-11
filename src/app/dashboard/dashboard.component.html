@@ -1,19 +1,31 @@
-<h2>Top Heroes</h2>
-<div class="heroes-menu">
-  <a *ngFor="let hero of heroes">
-    {{hero.name}}
-  </a>
-</div>
+<mat-grid-list cols="3" rowHeight="2:2">
+    <mat-grid-tile>
+        <mat-card>
+            <mat-card-title>
+                Best Heroe
+            </mat-card-title>
+            <mat-selection-list multiple="false">
+                <mat-list-option routerLink="/detail/{{hero.id}}">
+                    {{hero.name}}
+                </mat-list-option>
+            </mat-selection-list>
+        </mat-card>
+    </mat-grid-tile>
 
-<a *ngFor="let hero of heroes"
-  routerLink="/detail/{{hero.id}}">
-  {{hero.name}}
-</a>
+    <mat-grid-tile>
+        <mat-card>
+            <mat-card-title>Top Heroes</mat-card-title>
+            <mat-selection-list #shoes [multiple]="false">
+                <mat-list-option *ngFor="let hero of heroes" routerLink="/detail/{{hero.id}}">
+                    {{hero.name}}
+                </mat-list-option>
+            </mat-selection-list>
+        </mat-card>
+    </mat-grid-tile>
 
-<ul class="heroes">
-    <li *ngFor="let hero of heroes">
-      <a routerLink="/detail/{{hero.id}}">
-        <span class="badge">{{hero.id}}</span> {{hero.name}}
-      </a>
-    </li>
-  </ul>
+    <mat-grid-tile>
+        <mat-card>
+            <app-messages></app-messages>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

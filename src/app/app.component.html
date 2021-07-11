@@ -5,11 +5,14 @@
     <span>{{title}}</span>
 </mat-toolbar>
 
-<mat-drawer-container class="example-container" autosize>
+<mat-drawer-container autosize>
+    <router-outlet></router-outlet>
+    <!--
     <mat-card>
-        <router-outlet></router-outlet>
         <app-messages></app-messages>
     </mat-card>
+    -->
+
 
     <mat-card>
         <mat-card-title>
@@ -20,7 +23,7 @@
         </mat-card-footer>
     </mat-card>
 
-    <mat-drawer #drawer class="example-sidenav" mode="side">
+    <mat-drawer #drawer mode="side">
         <mat-selection-list #shoes [multiple]="false">
             <mat-list-option routerLink="/">
                 Inicio
@@ -31,6 +34,6 @@
             <mat-list-option>
                 Informacion
             </mat-list-option>
-          </mat-selection-list>
+        </mat-selection-list>
     </mat-drawer>
 </mat-drawer-container>
